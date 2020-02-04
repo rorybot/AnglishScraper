@@ -1,3 +1,4 @@
+import json
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from string import ascii_uppercase
@@ -40,4 +41,5 @@ for letter in ascii_uppercase:
 		anglish_dictionary.update({english_def:{"class":class_type, "attested":attested, "unattested":unattested}})
 
 print(anglish_dictionary["a cappella"])
-
+with open("file.txt", "w") as f:
+     json.dump(anglish_dictionary, f, indent=4)
