@@ -28,18 +28,13 @@ for letter in ascii_uppercase:
 			print(rowtds[i])
 
 	for word_column in rowtds:
-		print(len(word_column))
 		english_def = word_column[0].text.strip();
-		print(english_def)
 		class_type = word_column[1].text.strip();
-		print(class_type)
 		attested = word_column[2].text.strip();
-		print(attested)
 		unattested = word_column[3].text.strip();
-		print(unattested)
 		# print({english_def:{"class":class_type, "attested":attested, "unattested":unattested}})
 		anglish_dictionary.update({english_def:{"class":class_type, "attested":attested, "unattested":unattested}})
 
-print(anglish_dictionary["a cappella"])
+
 with open("file.txt", "w") as f:
      json.dump(anglish_dictionary, f, indent=4)
